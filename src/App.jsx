@@ -1,35 +1,51 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [value, setValue] = useState('');
+
+    return (
+        <>
+            <div className='container'>
+                <div className='calculator'>
+                    <form action="">
+                        <div>
+                            <input type="text" readOnly value={value} />
+                        </div>
+                        <div>
+                            <input type="button" value="AC" onClick={() => setValue('')} />
+                            <input type="button" value="DE" onClick={() => setValue(value.slice(0, -1))} />
+                            <input type="button" value="/" onClick={(e) => setValue(value + e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="button" value="7" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="8" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="9" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="*" onClick={(e) => setValue(value + e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="button" value="4" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="5" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="6" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="-" onClick={(e) => setValue(value + e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="button" value="1" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="2" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="3" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="+" onClick={(e) => setValue(value + e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="button" value="0" onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="." onClick={(e) => setValue(value + e.target.value)} />
+                            <input type="button" value="=" onClick={(e) => setValue(eval(value))} />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default App
