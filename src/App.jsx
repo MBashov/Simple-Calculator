@@ -65,8 +65,8 @@ function App() {
                         <div>
                             <input type="text" readOnly value={value} />
                         </div>
-                        {error && <div className="error-message">Invalid Expression</div>}
                         <div>
+                            <input type="button" value="C" onClick={handleDelete} />
                             <input type="button" value="AC" onClick={handleClear} />
                             <input type="button" value="DE" onClick={handleDelete} />
                             <input type="button" value="/" onClick={handleButtonClick} />
@@ -90,6 +90,7 @@ function App() {
                             <input type="button" value="+" onClick={handleButtonClick} />
                         </div>
                         <div>
+                            <input type="button" value="00" onClick={handleButtonClick} />
                             <input type="button" value="0" onClick={handleButtonClick} />
                             <input type="button" value="." onClick={handleButtonClick} />
                             <input type="button" value="=" onClick={handleEquals} />
