@@ -4,6 +4,24 @@ import './App.css'
 function App() {
 
     const [value, setValue] = useState('');
+    const [error, setError] = useState(false);
+
+    const handleButtonClick = (e) => {
+        const buttonValue = e.target.value;
+
+        setError(false);
+
+        if (
+            (buttonValue === '+' || buttonValue === '-' || buttonValue === '*' || buttonValue === '/') &&
+            (value === '' || /[+\-*\/]$/.test(value)) // Prevent multiple consecutive operators
+        ) {
+            return; // Do nothing if it's an invalid operator press
+        }
+
+        setValue(value + buttonValue);
+    }
+
+
 
     return (
         <>
