@@ -66,34 +66,34 @@ function App() {
                             <input type="text" readOnly value={value} />
                         </div>
                         <div>
-                            <input type="button" value="C" onClick={handleDelete} />
-                            <input type="button" value="AC" onClick={handleClear} />
-                            <input type="button" value="DE" onClick={handleDelete} />
-                            <input type="button" value="/" onClick={handleButtonClick} />
+                            <input type="button" value="DE" className='delete' onClick={handleDelete} />
+                            <input type="button" value="C" className='clear' onClick={handleClear} />
+                            <input type="button" value="AC" className='clear' onClick={handleClear} />
+                            <input type="button" value="/" className='operator' onClick={handleButtonClick} />
                         </div>
                         <div>
                             <input type="button" value="7" onClick={handleButtonClick} />
                             <input type="button" value="8" onClick={handleButtonClick} />
                             <input type="button" value="9" onClick={handleButtonClick} />
-                            <input type="button" value="*" onClick={handleButtonClick} />
+                            <input type="button" value="*" className='operator' onClick={handleButtonClick} />
                         </div>
                         <div>
                             <input type="button" value="4" onClick={handleButtonClick} />
                             <input type="button" value="5" onClick={handleButtonClick} />
                             <input type="button" value="6" onClick={handleButtonClick} />
-                            <input type="button" value="-" onClick={handleButtonClick} />
+                            <input type="button" value="-" className='operator' onClick={handleButtonClick} />
                         </div>
                         <div>
                             <input type="button" value="1" onClick={handleButtonClick} />
                             <input type="button" value="2" onClick={handleButtonClick} />
                             <input type="button" value="3" onClick={handleButtonClick} />
-                            <input type="button" value="+" onClick={handleButtonClick} />
+                            <input type="button" value="+" className='operator' onClick={handleButtonClick} />
                         </div>
                         <div>
                             <input type="button" value="00" onClick={handleButtonClick} />
                             <input type="button" value="0" onClick={handleButtonClick} />
                             <input type="button" value="." onClick={handleButtonClick} />
-                            <input type="button" value="=" onClick={handleEquals} />
+                            <input type="button" value="=" className='equals' onClick={handleEquals} />
                         </div>
                     </form>
                 </div>
